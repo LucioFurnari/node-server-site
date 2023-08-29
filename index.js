@@ -1,7 +1,7 @@
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
-const setPage = require('./functions.js')
+const getPage = require('./functions.js')
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -15,25 +15,16 @@ const server = http.createServer((req, res) => {
       })
       break;
     case '/about':
-      fs.readFile(path.join(__dirname, 'public', 'about.html'), (err, content) => {
-      if (err) throw err;
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(content, 'utf-8');
-      })
+      res.end( getPage('about.html'), 'utf-8');
       break;
     case '/contact-me':
-      fs.readFile(path.join(__dirname, 'public', 'contact-me.html'), (err, content) => {
-        if (err) throw err;
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(content, 'utf-8');
-      })
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end( getPage('contact-me.html'), 'utf-8');
       break;
     default:
-      fs.readFile(path.join(__dirname, 'public', '404.html'), (err, content) => {
-        if (err) throw err;
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(content, 'utf-8')
-      })
+        res.end( getPage('404.html'), 'utf-8')
       break;
   }
 });
