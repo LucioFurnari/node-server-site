@@ -5,7 +5,6 @@ const getPage = require('./functions.js')
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  console.log(req.url)
 
   // Build file path
   let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url)
@@ -56,7 +55,7 @@ const server = http.createServer((req, res) => {
     default:
       break;
   }
-
+  if (contentType === 'text/html') {
   switch (req.url) {
     case '/':
       fs.readFile(filePath, (err, content) => {
@@ -91,6 +90,7 @@ const server = http.createServer((req, res) => {
       });
       break;
   }
+}
 });
 
 server.listen(5000)
