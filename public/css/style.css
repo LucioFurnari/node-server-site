@@ -48,3 +48,26 @@ table {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------- */
+
+body {
+  background-color: hsl(44, 100%, 91%);
+	padding: 4rem;
+}
+
+h1 {
+	font-size: 2.6rem;
+	font-weight: 600;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+.error-msg {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 3rem;
+}
