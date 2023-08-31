@@ -20,6 +20,7 @@ const server = http.createServer((req, res) => {
   switch (fileExt) {
     case '.css':
       contentType = 'text/css';
+      
       break;
     case '.js':
       contentType = 'text/javascript';
@@ -46,14 +47,6 @@ const server = http.createServer((req, res) => {
       });
       break;
     case '/contact-me':
-      fs.readFile(filePath + '.html', function (err, data) {
-        if (err) console.log(err);
-        res.writeHead(200, {'Content-Type': contentType});
-        res.write(data, 'utf-8');
-        res.end()
-      });
-      break;
-    case '/public/css/style.css':
       fs.readFile(filePath + '.html', function (err, data) {
         if (err) console.log(err);
         res.writeHead(200, {'Content-Type': contentType});
