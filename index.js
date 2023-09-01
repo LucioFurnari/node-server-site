@@ -1,7 +1,6 @@
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
-const getPage = require('./functions.js')
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
