@@ -65,9 +65,39 @@ h1 {
 	align-items: start;
 }
 
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
 .error-msg {
 	width: 50%;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 3rem;
+}
+.about-art {
+	background-color: rgba(143, 143, 143, 0.2);
+	backdrop-filter: blur(12px);
+	width: fit-content;
+	margin: 0 auto;
+	margin-top: 1.6rem;
+}
+
+.about-bg {
+	background-image: url('/images/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.about-img {
+	width: 400px;
+	height: auto;
+}
+
+.about-text {
+	font-size: 2rem;
+	margin: 0 1.6rem;
 }
